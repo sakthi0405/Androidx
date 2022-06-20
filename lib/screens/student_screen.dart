@@ -1,9 +1,7 @@
+import 'package:androidx/map/MapSample.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/painting.dart';
-import 'package:flutter/widgets.dart';
 
 // map import
-import '../map/MapSample.dart';
 
 class StudentPage extends StatefulWidget {
   @override
@@ -158,33 +156,36 @@ class BottomBar extends StatelessWidget {
         });
   }
 
-  BottomBar() {
-    bottomNavigationBar:
-    BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-            icon: Icon(Icons.location_on), label: 'Location'),
-        BottomNavigationBarItem(icon: Icon(Icons.directions_bus), label: 'Bus'),
-        BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_view_day), label: 'Status')
-      ],
-      selectedLabelStyle: TextStyle(fontSize: 18.0),
-    );
-  }
-
   // BottomBar() {
-  //   bottomNavigationItems.add(BottomNavigationBarItem(
-  //       icon: Icon(Icons.location_on),
-  //       title: Text('Location', style: TextStyle(fontSize: 18.0))));
-
-  //   bottomNavigationItems.add(BottomNavigationBarItem(
-  //       icon: Icon(Icons.directions_bus),
-  //       title: Text('Bus', style: TextStyle(fontSize: 18.0))));
-
-  //   bottomNavigationItems.add(BottomNavigationBarItem(
-  //       icon: Icon(Icons.calendar_view_day),
-  //       title: Text('Status', style: TextStyle(fontSize: 18.0))));
+  //   bottomNavigationBar:
+  //   BottomNavigationBar(
+  //     items: const <BottomNavigationBarItem>[
+  //       BottomNavigationBarItem(
+  //           icon: Icon(Icons.location_on), label: 'Location'),
+  //       BottomNavigationBarItem(icon: Icon(Icons.directions_bus), label: 'Bus'),
+  //       BottomNavigationBarItem(
+  //           icon: Icon(Icons.calendar_view_day), label: 'Status')
+  //     ],
+  //     selectedLabelStyle: TextStyle(fontSize: 18.0),
+  //   );
   // }
+
+  BottomBar() {
+    bottomNavigationItems.add(BottomNavigationBarItem(
+      icon: Icon(Icons.location_on),
+      label: 'Location',
+    ));
+
+    bottomNavigationItems.add(BottomNavigationBarItem(
+      icon: Icon(Icons.directions_bus),
+      label: 'Bus',
+    ));
+
+    bottomNavigationItems.add(BottomNavigationBarItem(
+      icon: Icon(Icons.calendar_view_day),
+      label: 'Status',
+    ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -194,7 +195,7 @@ class BottomBar extends StatelessWidget {
       onTap: (index) {
         if (index == 1) {
           _showBusInfo(context);
-        } else if (index == 2) {
+        } else if (index == 3) {
           _showStatus(context);
         }
       },

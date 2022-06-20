@@ -17,12 +17,12 @@ class SignIn extends StatelessWidget {
       );
 }
 
-Color firstColor = Color(0xfff47d15);
-Color secondColor = Color(0xffef772c);
+Color firstColor = Colors.blue;
+Color secondColor = Colors.blue;
 
 // app theme
 ThemeData appTheme = ThemeData(
-  primaryColor: Color(0xfff3791a),
+  primaryColor: Colors.blue,
 );
 
 class SignInTopPart extends StatelessWidget {
@@ -50,7 +50,7 @@ class SignInTopPart extends StatelessWidget {
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 5.0),
                         child: Text(
-                          'SAFET',
+                          'SAFE JOURNEY',
                           style: TextStyle(
                             fontSize: 40,
                             color: Colors.white,

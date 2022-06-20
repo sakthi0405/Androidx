@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
-import 'package:latlng/latlng.dart';
+import 'package:latlong2/latlong.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,7 +13,7 @@ class OurGeoLocation extends StatefulWidget {
 }
 
 class _OurGeoLocationState extends State<OurGeoLocation> {
-  String apiToken = "api key goes here";
+  String apiToken = "AIzaSyD3HU4ZZ95VYJILQkThX82RwpUGXcLXTYM";
   double userZoom = 15.0;
 
   late SharedPreferences sPrefs;
@@ -55,7 +55,7 @@ class _OurGeoLocationState extends State<OurGeoLocation> {
                   urlTemplate: "https://api.mapbox.com/v4/"
                       "{id}/{z}/{x}/{y}@2x.png?access_token=$apiToken",
                   additionalOptions: {
-                    "accessToken": "api key goes here",
+                    "accessToken": "AIzaSyD3HU4ZZ95VYJILQkThX82RwpUGXcLXTYM",
                     "id": "mapbox.streets",
                   },
                   //offlineMode: ,
@@ -132,40 +132,39 @@ class _OurGeoLocationState extends State<OurGeoLocation> {
               ],
             ),
           ),
-
-// Row(
-//   mainAxisAlignment: MainAxisAlignment.end,
-//   children: <Widget>[
-//                   Container(
-//                 child:Row(
-//                   mainAxisSize: MainAxisSize.min,
-//                   // mainAxisAlignment: MainAxisAlignment.end,
-//                   // crossAxisAlignment: CrossAxisAlignment.end,
-//                   children: <Widget>[
-//                       Column(
-//                         mainAxisSize: MainAxisSize.min,
-//                 children: <Widget>[
-//                   IconButton(
-//                     icon: Icon(Icons.add),
-//                     onPressed: (){
-//                       setState(() {
-//                        userZoom = userZoom + 1.0;
-//                        print("adding ..");
-//                       });
-//                     },
-//                   ),
-//                   IconButton(
-//                     icon: Icon(Icons.minimize),
-//                     onPressed: (){},
-//                   ),
-//                 ],
-//               )
-//                   ],
-//                 ) ,
-//                 color: Colors.blueGrey.withOpacity(0.2),
-//               )
-//   ],
-// )
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Container(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  // mainAxisAlignment: MainAxisAlignment.end,
+                  // crossAxisAlignment: CrossAxisAlignment.end,
+                  children: <Widget>[
+                    Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        IconButton(
+                          icon: Icon(Icons.add),
+                          onPressed: () {
+                            setState(() {
+                              userZoom = userZoom + 1.0;
+                              print("adding ..");
+                            });
+                          },
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.minimize),
+                          onPressed: () {},
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+                color: Colors.blueGrey.withOpacity(0.2),
+              )
+            ],
+          )
         ],
       ),
     );
@@ -182,7 +181,7 @@ class MianMapPage extends StatefulWidget {
 }
 
 class _MianMapPageState extends State<MianMapPage> {
-  String apiToken = "api key goes here";
+  String apiToken = "AIzaSyD3HU4ZZ95VYJILQkThX82RwpUGXcLXTYM";
   late SharedPreferences sPrefs;
   late String theHotelsName;
 
@@ -237,7 +236,7 @@ class _MianMapPageState extends State<MianMapPage> {
               urlTemplate: "https://api.mapbox.com/v4/"
                   "{id}/{z}/{x}/{y}@2x.png?access_token=$apiToken",
               additionalOptions: {
-                "accessToken": "api key goes here",
+                "accessToken": "AIzaSyD3HU4ZZ95VYJILQkThX82RwpUGXcLXTYM",
                 "id": "mapbox.streets",
               },
               //offlineMode: ,
@@ -319,16 +318,16 @@ class _MianMapPageState extends State<MianMapPage> {
   }
 }
 
-// class ShowMyBottomSheet extends StatefulWidget {
-//   @override
-//   _ShowMyBottomSheetState createState() => _ShowMyBottomSheetState();
-// }
+class ShowMyBottomSheet extends StatefulWidget {
+  @override
+  _ShowMyBottomSheetState createState() => _ShowMyBottomSheetState();
+}
 
-// class _ShowMyBottomSheetState extends State<ShowMyBottomSheet> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(),
-//     );
-//   }
-// }
+class _ShowMyBottomSheetState extends State<ShowMyBottomSheet> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
+    );
+  }
+}

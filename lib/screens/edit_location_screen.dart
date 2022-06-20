@@ -1,10 +1,10 @@
 import 'package:androidx/main.dart';
+import 'package:androidx/map/MapSample.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/widgets.dart';
 
 // map imports
-import '../map/MapSample.dart';
 
 class EditLocationPage extends StatefulWidget {
   @override
@@ -90,29 +90,29 @@ class _EditLocationPageState extends State<EditLocationPage> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Material(
-                  elevation: 5.0,
-                  borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                  child: TextField(
-                    cursorColor: appTheme.primaryColor,
-                    decoration: InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'search place...',
-                      suffixIcon: InkWell(
-                        onTap: () {},
-                        child: Icon(
-                          Icons.search,
-                          color: Colors.blue,
-                        ),
-                      ),
-                      contentPadding: EdgeInsets.symmetric(
-                          horizontal: 32.0, vertical: 13.0),
-                    ),
-                  ),
-                ),
-              ),
+              // Padding(
+              //   padding: EdgeInsets.all(20.0),
+              //   child: Material(
+              //     elevation: 5.0,
+              //     borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              //     child: TextField(
+              //       cursorColor: appTheme.primaryColor,
+              //       decoration: InputDecoration(
+              //         border: InputBorder.none,
+              //         hintText: 'search place...',
+              //         suffixIcon: InkWell(
+              //           onTap: () {},
+              //           child: Icon(
+              //             Icons.search,
+              //             color: Colors.blue,
+              //           ),
+              //         ),
+              //         contentPadding: EdgeInsets.symmetric(
+              //             horizontal: 32.0, vertical: 13.0),
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ],
@@ -142,44 +142,47 @@ class BottomBar extends StatelessWidget {
         });
   }
 
-  BottomBar() {
-    bottomNavigationBar:
-    BottomNavigationBar(
-      items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(
-            icon: Icon(Icons.location_on), label: 'Location'),
-        BottomNavigationBarItem(icon: Icon(Icons.timer), label: 'Timer')
-      ],
-      selectedLabelStyle: TextStyle(fontSize: 18.0),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    throw UnimplementedError();
-  }
-
   // BottomBar() {
-  //   bottomNavigationItems.add(BottomNavigationBarItem(
-  //       icon: Icon(Icons.location_on),
-  //       title: Text('Location', style: TextStyle(fontSize: 18.0))));
-
-  //   bottomNavigationItems.add(BottomNavigationBarItem(
-  //       icon: Icon(Icons.timer),
-  //       title: Text('Set Reminder', style: TextStyle(fontSize: 18.0))));
+  //   bottomNavigationBar:
+  //   BottomNavigationBar(
+  //     items: const <BottomNavigationBarItem>[
+  //       BottomNavigationBarItem(
+  //           icon: Icon(Icons.location_on), label: 'Location'),
+  //       BottomNavigationBarItem(icon: Icon(Icons.timer), label: 'Timer')
+  //     ],
+  //     selectedLabelStyle: TextStyle(fontSize: 18.0),
+  //   );
   // }
 
   // @override
   // Widget build(BuildContext context) {
-  //   return BottomNavigationBar(
-  //     items: bottomNavigationItems,
-  //     type: BottomNavigationBarType.fixed,
-  //     onTap: (index) {
-  //       if (index == 1) {
-  //         _showSetReminderDialogue(context);
-  //       }
-  //     },
-  //   );
+  //   // TODO: implement build
+  //   throw UnimplementedError();
+  // }
 
+  BottomBar() {
+    bottomNavigationItems.add(BottomNavigationBarItem(
+            icon: Icon(Icons.location_on), label: 'location')
+        // Text('Location', style: TextStyle(fontSize: 18.0))
+        );
+
+    bottomNavigationItems.add(BottomNavigationBarItem(
+      icon: Icon(Icons.timer),
+      label: 'Set Reminder',
+      //  Text('Set Reminder', style: TextStyle(fontSize: 18.0))
+    ));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomNavigationBar(
+      items: bottomNavigationItems,
+      type: BottomNavigationBarType.fixed,
+      onTap: (index) {
+        if (index == 1) {
+          _showSetReminderDialogue(context);
+        }
+      },
+    );
+  }
 }

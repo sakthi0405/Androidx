@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Home"),
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.blue,
         actions: <Widget>[
           InkWell(
               onTap: () {},
@@ -127,6 +127,12 @@ class _HomePageState extends State<HomePage> {
 // List of children a parent has registered to show on the homepage
 // with their current location
 List<ChildrenCard> childrenCards = [
+  ChildrenCard(
+      'assets/dope.jpg', 'studentName', 'studentSchool', 'studentStatus'),
+  ChildrenCard(
+      'assets/dope.jpg', 'studentName', 'studentSchool', 'studentStatus'),
+  ChildrenCard(
+      'assets/dope.jpg', 'studentName', 'studentSchool', 'studentStatus'),
   ChildrenCard(
       'assets/dope.jpg', 'studentName', 'studentSchool', 'studentStatus'),
   ChildrenCard(

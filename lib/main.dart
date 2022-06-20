@@ -6,7 +6,7 @@ import 'screens/sign_in.dart';
 
 void main() => runApp(
       MaterialApp(
-        title: 'Flight List Mock Up',
+        title: 'school bus tracking',
         debugShowCheckedModeBanner: false,
         // home: Screen(),
         home: SignIn(),
@@ -14,7 +14,7 @@ void main() => runApp(
       ),
     );
 
-ThemeData appTheme = ThemeData(primaryColor: Colors.deepOrange);
+ThemeData appTheme = ThemeData(primaryColor: Colors.yellowAccent);
 
 class Screen extends StatelessWidget {
   @override
@@ -24,4 +24,3 @@ class Screen extends StatelessWidget {
     );
   }
 }
-
